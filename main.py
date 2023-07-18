@@ -56,3 +56,4 @@ result = syntec.READ_plc_register(23)
 # Step 4: Handle the result
 print("Result:", result)
 '''
+#t
