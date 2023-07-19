@@ -13,13 +13,17 @@ nunit = ctypes.CDLL("M:/Python/researchProject/syntecRobotArmHMI/HMIV1/nunit.fra
 MMI = ctypes.CDLL("M:/Python/researchProject/syntecRobotArmHMI/HMIV1/MMICommon32.dll")
 
 #Check Calling Convention of Functions
+#syntec.SyntecRemoteCNC = ctypes.CFUNCTYPE()
 syntec.READ_plc_register = ctypes.CFUNCTYPE(ctypes.c_int, ctypes.c_int, ctypes.c_int)
+
 
 #Initialize The Arguments/ Parameter Data Types
 syntec.READ_plc_register.argtypes = [ctypes.c_uint32, ctypes.c_uint32]
 
 #Initialize The Result/ Return Data Type
 syntec.READ_plc_register.restype = ctypes.c_int
+
+#myCNC = list[syntec.SyntecRemoteCNC];
 
 print(syntec.READ_plc_register(1))
 
